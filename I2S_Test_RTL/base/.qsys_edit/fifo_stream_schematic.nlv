@@ -1,0 +1,20 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst fifo_stream -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst fifo_stream.left_fifo -pg 1 -lvl 2 -y 30
+preplace inst fifo_stream.clk_0 -pg 1 -lvl 1 -y 230
+preplace inst fifo_stream.audio_and_video_config_0 -pg 1 -lvl 3 -y 250
+preplace inst fifo_stream.right_fifo -pg 1 -lvl 2 -y 170
+preplace inst fifo_stream.audio_0 -pg 1 -lvl 3 -y 50
+preplace netloc EXPORT<net_container>fifo_stream</net_container>(SLAVE)fifo_stream.left_fifo_in,(SLAVE)left_fifo.in) 1 0 2 NJ 80 NJ
+preplace netloc EXPORT<net_container>fifo_stream</net_container>(SLAVE)fifo_stream.ext_1,(SLAVE)audio_and_video_config_0.external_interface) 1 0 3 NJ 300 NJ 300 NJ
+preplace netloc POINT_TO_POINT<net_container>fifo_stream</net_container>(SLAVE)audio_0.avalon_left_channel_sink,(MASTER)left_fifo.out) 1 2 1 N
+preplace netloc EXPORT<net_container>fifo_stream</net_container>(SLAVE)right_fifo.in,(SLAVE)fifo_stream.right_fifo_in) 1 0 2 NJ 220 NJ
+preplace netloc POINT_TO_POINT<net_container>fifo_stream</net_container>(SLAVE)audio_0.avalon_right_channel_sink,(MASTER)right_fifo.out) 1 2 1 470
+preplace netloc FAN_OUT<net_container>fifo_stream</net_container>(SLAVE)right_fifo.clk_reset,(SLAVE)left_fifo.clk_reset,(MASTER)clk_0.clk_reset,(SLAVE)audio_and_video_config_0.reset,(SLAVE)audio_0.reset) 1 1 2 320 160 510
+preplace netloc EXPORT<net_container>fifo_stream</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)fifo_stream.reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>fifo_stream</net_container>(SLAVE)fifo_stream.ext,(SLAVE)audio_0.external_interface) 1 0 3 NJ 120 NJ 120 NJ
+preplace netloc EXPORT<net_container>fifo_stream</net_container>(SLAVE)fifo_stream.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>fifo_stream</net_container>(SLAVE)audio_0.clk,(MASTER)clk_0.clk,(SLAVE)left_fifo.clk,(SLAVE)audio_and_video_config_0.clk,(SLAVE)right_fifo.clk) 1 1 2 300 140 490
+levelinfo -pg 1 0 90 900
+levelinfo -hier fifo_stream 100 130 350 540 890

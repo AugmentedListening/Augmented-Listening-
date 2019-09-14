@@ -1,0 +1,13 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst fir_filter.clk_0 -pg 1 -lvl 1 -y 50
+preplace inst fir_filter -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst fir_filter.fir_compiler_ii_0 -pg 1 -lvl 2 -y 30
+preplace netloc POINT_TO_POINT<net_container>fir_filter</net_container>(SLAVE)fir_compiler_ii_0.clk,(MASTER)clk_0.clk) 1 1 1 N
+preplace netloc EXPORT<net_container>fir_filter</net_container>(SLAVE)fir_filter.input,(SLAVE)fir_compiler_ii_0.avalon_streaming_sink) 1 0 2 NJ 40 NJ
+preplace netloc EXPORT<net_container>fir_filter</net_container>(SLAVE)fir_filter.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>fir_filter</net_container>(MASTER)fir_filter.output,(MASTER)fir_compiler_ii_0.avalon_streaming_source) 1 2 1 N
+preplace netloc EXPORT<net_container>fir_filter</net_container>(SLAVE)clk_0.clk_in,(SLAVE)fir_filter.clk) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>fir_filter</net_container>(MASTER)clk_0.clk_reset,(SLAVE)fir_compiler_ii_0.rst) 1 1 1 N
+levelinfo -pg 1 0 50 540
+levelinfo -hier fir_filter 60 90 270 470

@@ -1,0 +1,3 @@
+Warning (10268): Verilog HDL information at gain_fsm.sv(63): always construct contains both blocking and non-blocking assignments File: H:/juanjm2_git/micArray/I2S_AUD_IP/base/gain_fsm.sv Line: 63
+Warning (10268): Verilog HDL information at sample_feed_fsm.sv(66): always construct contains both blocking and non-blocking assignments File: H:/juanjm2_git/micArray/I2S_AUD_IP/base/sample_feed_fsm.sv Line: 66
+Warning (10268): Verilog HDL information at fir_channel_fsm.sv(37): always construct contains both blocking and non-blocking assignments File: H:/juanjm2_git/micArray/I2S_AUD_IP/base/fir_channel_fsm.sv Line: 37

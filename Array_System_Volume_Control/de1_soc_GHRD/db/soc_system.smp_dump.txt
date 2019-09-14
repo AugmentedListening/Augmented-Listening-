@@ -1,0 +1,104 @@
+
+State Machine - |ghrd_top|aud_setup:fir_setup|aud_setup_audio_and_video_config_0:audio_and_video_config_0|s_serial_transfer
+Name s_serial_transfer.STATE_6_POST_READ s_serial_transfer.STATE_5_READ_TRANSFER s_serial_transfer.STATE_4_PRE_READ s_serial_transfer.STATE_3_POST_WRITE s_serial_transfer.STATE_2_WRITE_TRANSFER s_serial_transfer.STATE_1_PRE_WRITE s_serial_transfer.STATE_0_IDLE 
+s_serial_transfer.STATE_0_IDLE 0 0 0 0 0 0 0 
+s_serial_transfer.STATE_1_PRE_WRITE 0 0 0 0 0 1 1 
+s_serial_transfer.STATE_2_WRITE_TRANSFER 0 0 0 0 1 0 1 
+s_serial_transfer.STATE_3_POST_WRITE 0 0 0 1 0 0 1 
+s_serial_transfer.STATE_4_PRE_READ 0 0 1 0 0 0 1 
+s_serial_transfer.STATE_5_READ_TRANSFER 0 1 0 0 0 0 1 
+s_serial_transfer.STATE_6_POST_READ 1 0 0 0 0 0 1 
+
+State Machine - |ghrd_top|aud_setup:fir_setup|aud_setup_audio_and_video_config_0:audio_and_video_config_0|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller|s_serial_protocol
+Name s_serial_protocol.STATE_5_STOP_BIT s_serial_protocol.STATE_4_TRANSFER s_serial_protocol.STATE_3_START_BIT s_serial_protocol.STATE_2_RESTART_BIT s_serial_protocol.STATE_1_INITIALIZE s_serial_protocol.STATE_0_IDLE 
+s_serial_protocol.STATE_0_IDLE 0 0 0 0 0 0 
+s_serial_protocol.STATE_1_INITIALIZE 0 0 0 0 1 1 
+s_serial_protocol.STATE_2_RESTART_BIT 0 0 0 1 0 1 
+s_serial_protocol.STATE_3_START_BIT 0 0 1 0 0 1 
+s_serial_protocol.STATE_4_TRANSFER 0 1 0 0 0 1 
+s_serial_protocol.STATE_5_STOP_BIT 1 0 0 0 0 1 
+
+State Machine - |ghrd_top|aud_setup:fir_setup|aud_setup_FIR_LEFT:fir_right|aud_setup_FIR_LEFT_ast:aud_setup_FIR_LEFT_ast_inst|auk_dspip_avalon_streaming_sink_hpfir:sink|sink_state
+Name sink_state.end1 sink_state.st_err sink_state.run1 sink_state.stall sink_state.start 
+sink_state.start 0 0 0 0 0 
+sink_state.stall 0 0 0 1 1 
+sink_state.run1 0 0 1 0 1 
+sink_state.st_err 0 1 0 0 1 
+sink_state.end1 1 0 0 0 1 
+
+State Machine - |ghrd_top|aud_setup:fir_setup|aud_setup_FIR_LEFT:fir_left|aud_setup_FIR_LEFT_ast:aud_setup_FIR_LEFT_ast_inst|auk_dspip_avalon_streaming_sink_hpfir:sink|sink_state
+Name sink_state.end1 sink_state.st_err sink_state.run1 sink_state.stall sink_state.start 
+sink_state.start 0 0 0 0 0 
+sink_state.stall 0 0 0 1 1 
+sink_state.run1 0 0 1 0 1 
+sink_state.st_err 0 1 0 0 1 
+sink_state.end1 1 0 0 0 1 
+
+State Machine - |ghrd_top|volumeControl:vol|gain_fsm:fsm_R|state
+Name state.FIN state.FIXSI_WAIT state.INTER_2 state.FMULS_WAIT state.INTER_1 state.FLOATIS_WAIT state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 
+state.FLOATIS_WAIT 0 0 0 0 0 1 1 
+state.INTER_1 0 0 0 0 1 0 1 
+state.FMULS_WAIT 0 0 0 1 0 0 1 
+state.INTER_2 0 0 1 0 0 0 1 
+state.FIXSI_WAIT 0 1 0 0 0 0 1 
+state.FIN 1 0 0 0 0 0 1 
+
+State Machine - |ghrd_top|volumeControl:vol|gain_fsm:fsm_L|state
+Name state.FIN state.FIXSI_WAIT state.INTER_2 state.FMULS_WAIT state.INTER_1 state.FLOATIS_WAIT state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 
+state.FLOATIS_WAIT 0 0 0 0 0 1 1 
+state.INTER_1 0 0 0 0 1 0 1 
+state.FMULS_WAIT 0 0 0 1 0 0 1 
+state.INTER_2 0 0 1 0 0 0 1 
+state.FIXSI_WAIT 0 1 0 0 0 0 1 
+state.FIN 1 0 0 0 0 0 1 
+
+State Machine - |ghrd_top|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:pushbuttons_s1_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
+State Machine - |ghrd_top|soc_system:u0|soc_system_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:mic_system_0_mic_slave_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
+State Machine - |ghrd_top|soc_system:u0|avalon_microphone_system:mic_system_0|mic_dma:dma_yo|state
+Name state.FIN state.WRITEDATA5 state.LOADDATA5 state.WRITEDATA4 state.LOADDATA4 state.WRITEDATA3 state.LOADDATA3 state.WRITEDATA2 state.LOADDATA2 state.WRITEDATA state.LOADDATA state.WAITDATA2 state.WAITDATA state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.WAITDATA 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.WAITDATA2 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.LOADDATA 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.WRITEDATA 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.LOADDATA2 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.WRITEDATA2 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.LOADDATA3 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.WRITEDATA3 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.LOADDATA4 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.WRITEDATA4 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.LOADDATA5 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.WRITEDATA5 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.FIN 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |ghrd_top|soc_system:u0|soc_system_Secondary_PLL:secondary_pll|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state
+Name dps_current_state.PHASE_DONE_LOW_0 dps_current_state.PHASE_DONE_LOW_4 dps_current_state.PHASE_DONE_LOW_3 dps_current_state.PHASE_DONE_LOW_2 dps_current_state.PHASE_DONE_LOW_1 dps_current_state.PHASE_DONE_HIGH 
+dps_current_state.PHASE_DONE_HIGH 0 0 0 0 0 0 
+dps_current_state.PHASE_DONE_LOW_1 0 0 0 0 1 1 
+dps_current_state.PHASE_DONE_LOW_2 0 0 0 1 0 1 
+dps_current_state.PHASE_DONE_LOW_3 0 0 1 0 0 1 
+dps_current_state.PHASE_DONE_LOW_4 0 1 0 0 0 1 
+dps_current_state.PHASE_DONE_LOW_0 1 0 0 0 0 1 
+
+State Machine - |ghrd_top|soc_system:u0|soc_system_Primary_PLL:primary_pll|altera_pll:altera_pll_i|dps_extra_kick:dps_extra_inst|dps_current_state
+Name dps_current_state.PHASE_DONE_LOW_0 dps_current_state.PHASE_DONE_LOW_4 dps_current_state.PHASE_DONE_LOW_3 dps_current_state.PHASE_DONE_LOW_2 dps_current_state.PHASE_DONE_LOW_1 dps_current_state.PHASE_DONE_HIGH 
+dps_current_state.PHASE_DONE_HIGH 0 0 0 0 0 0 
+dps_current_state.PHASE_DONE_LOW_1 0 0 0 0 1 1 
+dps_current_state.PHASE_DONE_LOW_2 0 0 0 1 0 1 
+dps_current_state.PHASE_DONE_LOW_3 0 0 1 0 0 1 
+dps_current_state.PHASE_DONE_LOW_4 0 1 0 0 0 1 
+dps_current_state.PHASE_DONE_LOW_0 1 0 0 0 0 1 

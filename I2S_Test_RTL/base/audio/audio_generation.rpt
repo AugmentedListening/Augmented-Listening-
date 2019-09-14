@@ -1,0 +1,42 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate D:\Invesense_Base\ICS-52000\base\audio.qsys --block-symbol-file --output-directory=D:\Invesense_Base\ICS-52000\base\audio --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading base/audio.qsys
+Progress: Reading input file
+Progress: Adding audio_0 [altera_up_avalon_audio 17.1]
+Progress: Parameterizing module audio_0
+Progress: Adding audio_and_video_config_0 [altera_up_avalon_audio_and_video_config 17.1]
+Progress: Parameterizing module audio_and_video_config_0
+Progress: Adding clk_0 [clock_source 17.1]
+Progress: Parameterizing module clk_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: audio.audio_and_video_config_0: audio_and_video_config_0.avalon_av_config_slave must be connected to an Avalon-MM master
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate D:\Invesense_Base\ICS-52000\base\audio.qsys --synthesis=VERILOG --output-directory=D:\Invesense_Base\ICS-52000\base\audio\synthesis --family="Cyclone V" --part=5CSEMA5F31C6
+Progress: Loading base/audio.qsys
+Progress: Reading input file
+Progress: Adding audio_0 [altera_up_avalon_audio 17.1]
+Progress: Parameterizing module audio_0
+Progress: Adding audio_and_video_config_0 [altera_up_avalon_audio_and_video_config 17.1]
+Progress: Parameterizing module audio_and_video_config_0
+Progress: Adding clk_0 [clock_source 17.1]
+Progress: Parameterizing module clk_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: audio.audio_and_video_config_0: audio_and_video_config_0.avalon_av_config_slave must be connected to an Avalon-MM master
+Info: audio: Generating audio "audio" for QUARTUS_SYNTH
+Info: audio_0: Starting Generation of Audio Controller
+Info: audio_0: "audio" instantiated altera_up_avalon_audio "audio_0"
+Info: audio_and_video_config_0: Starting Generation of Audio and Video Config
+Info: audio_and_video_config_0: "audio" instantiated altera_up_avalon_audio_and_video_config "audio_and_video_config_0"
+Info: rst_controller: "audio" instantiated altera_reset_controller "rst_controller"
+Info: audio: Done "audio" with 4 modules, 25 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

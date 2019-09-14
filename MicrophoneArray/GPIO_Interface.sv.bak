@@ -1,0 +1,20 @@
+module Switch (input	 logic GPIO,
+					output logic [6:0]  hex);
+	
+
+logic[3:0]  s;
+
+HexDriver A1 (.In0(s[3:0]), .Out0(hex));
+	
+always_comb
+	begin
+		unique case (GPIO)
+	 	   1'b0   : s = 4'b0000;
+	 	   1'b1   : s = 4'b0001;
+        endcase
+	end
+
+
+
+
+endmodule

@@ -1,0 +1,25 @@
+|GPIO_Interface
+GPIO => Decoder0.IN0
+G0_Hex[0] << <GND>
+G0_Hex[1] << <GND>
+G0_Hex[2] << <GND>
+G0_Hex[3] << <GND>
+G0_Hex[4] << <GND>
+G0_Hex[5] << <GND>
+G0_Hex[6] << <GND>
+
+
+|GPIO_Interface|HexDriver:G0
+In0[0] => Decoder0.IN3
+In0[1] => Decoder0.IN2
+In0[2] => Decoder0.IN1
+In0[3] => Decoder0.IN0
+Out0[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+Out0[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+Out0[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+Out0[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+Out0[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+Out0[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+Out0[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

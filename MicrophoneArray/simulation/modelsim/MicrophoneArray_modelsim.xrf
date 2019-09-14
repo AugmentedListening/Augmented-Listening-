@@ -1,0 +1,14 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/corey1/Box Sync/MicArrayProjects/FPGA Code/DE1-SoC/MicrophoneArray/GPIO_Interface.sv
+source_file = 1, C:/Users/corey1/Box Sync/MicArrayProjects/FPGA Code/DE1-SoC/MicrophoneArray/HexDriver.sv
+source_file = 1, C:/Users/corey1/Box Sync/MicArrayProjects/FPGA Code/DE1-SoC/MicrophoneArray/db/MicrophoneArray.cbx.xml
+design_name = GPIO_Interface
+instance = comp, \G0_Hex[0]~output , G0_Hex[0]~output, GPIO_Interface, 1
+instance = comp, \G0_Hex[1]~output , G0_Hex[1]~output, GPIO_Interface, 1
+instance = comp, \G0_Hex[2]~output , G0_Hex[2]~output, GPIO_Interface, 1
+instance = comp, \G0_Hex[3]~output , G0_Hex[3]~output, GPIO_Interface, 1
+instance = comp, \G0_Hex[4]~output , G0_Hex[4]~output, GPIO_Interface, 1
+instance = comp, \G0_Hex[5]~output , G0_Hex[5]~output, GPIO_Interface, 1
+instance = comp, \G0_Hex[6]~output , G0_Hex[6]~output, GPIO_Interface, 1
+instance = comp, \GPIO~input , GPIO~input, GPIO_Interface, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, GPIO_Interface, 1
